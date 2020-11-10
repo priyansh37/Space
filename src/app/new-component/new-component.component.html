@@ -1,0 +1,25 @@
+  <div class="row">
+    <div style="margin-bottom: 15px;">
+      <div class="card" style="width: 15rem;">
+        <img src="{{collection?.links?.mission_patch_small}}" class="card-img-top" alt="..." style="padding: 40px;">
+        <div class="card-body">
+          <p class="details"><strong>{{collection?.mission_name}} #{{collection?.flight_number}}</strong></p>
+          <div>
+            <p class="card-text"><b>Mission Ids :</b></p>
+          </div>
+          <div>
+            <p class="card-text "><b>Launch year : </b><span class="details ">{{collection?.launch_year}}</span></p>
+          </div>
+          <div>
+            <p class="card-text"><b>Successful Launch : </b><span
+                class="details text-uppercase">{{collection?.launch_success}}</span></p>
+          </div>
+          <div *ngFor="let item of collection?.rocket?.first_stage?.cores">
+            <p class="card-text"><b>Successful Landing : </b><span
+                class="details text-uppercase">{{item?.land_success}}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- {{candidate id : C962049}} -->

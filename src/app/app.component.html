@@ -1,0 +1,41 @@
+<div class="conatiner">
+  <div class="row row-no-gutters" style="margin-left: 20px;">
+    <div class="col-sm-2 col-md-2">
+      <p><strong>Candidate id : C962049</strong></p>
+      <p><strong>Filters</strong></p>
+      <p class="text-center" style="margin-bottom: 0px;">Launch Year</p>
+      <hr style="margin-top: 0px;">
+      <div class="row row-no-gutters">
+        <div class="col-xs-6 col-sm-6" *ngFor="let item of yearDetails;">
+          <button class="btn btn-outline-success btn-sm {{ item == selectedYear ? 'active' : ''}}"
+            style="margin-bottom: 10px;" (click)="selectedYear = item; getData();">
+            {{item}}
+          </button>
+        </div>
+      </div>
+      <div class="text-center">
+        <p style="margin-bottom: 0px;">SuccessFully Launch</p>
+        <hr style="margin-top: 0px;">
+        <input type="button"  class="btn btn-outline-success {{ true == launchStatus ? 'active' : ''}}"
+          (click)="launchStatus = true; getData();" value="True" style="margin: 10px;">
+        <input type="button" class="btn btn-outline-success {{ false == launchStatus ? 'active' : ''}}"
+          (click)="launchStatus = false; getData();" value="False" style="margin: 10px;">
+      </div>
+      <div class="text-center">
+        <p style="margin-bottom: 0px;">SuccessFully Land</p>
+        <hr style="margin-top: 0px;">
+        <input type="button" class="btn btn-outline-success {{ true == landStatus ? 'active' : ''}} "
+          (click)="landStatus = true; getData();" value="True" style="margin: 10px;">
+        <input type="button" class="btn btn-outline-success {{ false == landStatus ? 'active' : ''}}"
+          (click)="landStatus = false; getData();" value="False" style="margin: 10px;">
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-md-8">
+      <div class="row">
+          <app-new-component class="col-xs-12 col-sm-6 col-md-3" [collection]="programeDetails" *ngFor="let programeDetails of collection">
+          </app-new-component>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- {{candidate id : C962049}} -->
